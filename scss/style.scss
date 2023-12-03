@@ -1,0 +1,220 @@
+@import "mixins.scss";
+
+$fuente: "Poppins", sans-serif;
+$fuenteTitulo: "Montserrat", sans-serif;
+
+$negro: #403c39;
+$blanco: #ffffff;
+$gris: #d0d0d2;
+$grisOscuro: #949494;
+$naranja: #f38160;
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: $fuente;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  nav {
+    margin-left: auto;
+
+    ul {
+      display: flex;
+      gap: 50px;
+
+      a {
+        font-family: $fuente;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $negro;
+        position: relative;
+
+        &:hover {
+          color: $naranja;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 35px;
+            width: 100%;
+            height: 3px;
+            background-color: $naranja;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+    font-size: 18px;
+
+    &__shop {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: -10px;
+        width: 10px;
+        height: 10px;
+        background-color: $naranja;
+        border-radius: 50%;
+      }
+    }
+
+    &__signin {
+      color: $naranja;
+      text-decoration: underline;
+    }
+
+    &__signup {
+      background-color: $naranja;
+      color: $blanco;
+      padding: 15px 30px;
+      border-radius: 16px;
+    }
+  }
+}
+
+.hero {
+  background-image: url("../img/Mohamed.jpg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  height: 600px;
+  margin-top: 50px;
+
+  &__title {
+    font-family: $fuenteTitulo;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -2.8px;
+    width: 60%;
+    color: $negro;
+
+    span {
+      color: $naranja;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: $grisOscuro;
+    width: 45%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__search-block {
+    position: relative;
+
+    input {
+      width: 512px;
+      height: 60px;
+      border-radius: 8px;
+      background-color: rgba(208, 208, 210, 0.25);
+      border: none;
+      padding-left: 30px;
+      font-family: $fuente;
+      font-size: 18px;
+    }
+
+    a {
+      background-color: $naranja;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      left: 452px;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
+  &__testimonials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 30%;
+    margin-top: 40px;
+
+    span {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: $grisOscuro;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url("../img/Vector.svg");
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.typeProducts {
+  display: flex;
+  gap:24px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  div {
+    h3 {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: $negro;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      color: $grisOscuro;
+    }
+  }
+}
